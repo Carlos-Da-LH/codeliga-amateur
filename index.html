@@ -13,6 +13,10 @@
         *::after {
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -30,7 +34,7 @@
 
             <div class="hidden md:flex gap-6">
                 <a href="#informacion" class="hover:underline">Sobre Nosotros</a>
-                <a href="#torneos" class="hover:underline">Torneos</a>
+                <a href="#torneo-programacion" class="hover:underline">Torneos</a>
                 <a href="#patrocinio" class="hover:underline">Colaboración</a>
                 <a href="#contacto" class="hover:underline">Redes Sociales</a>
             </div>
@@ -74,7 +78,7 @@
             <p class="max-w-2xl mx-auto text-lg text-white">El lugar donde aprendes, compites y te diviertes con
                 programación, deportes mentales, eSports, talleres de inglés y computación, desarrollo de videojuegos y
                 emocionantes deportes del futuro.</p>
-            <a href="#torneos"
+            <a href="#torneo-programacion"
                 class="mt-6 inline-flex items-center justify-center gap-2 bg-[#892fcd] text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-[#6b1db0] transition">
                 Participar
             </a>
@@ -261,12 +265,12 @@
         Colaboradores de la CodeLiga
     </h2>
 
-    <div
-        class="max-w-6xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center justify-center">
-
+    <div class="max-w-6xl mx-auto mt-12 flex justify-center">
         <img src="imagen/logo_machadoisla_tra.png" alt="Colaborador 1" class="h-32 w-auto object-contain">
-        <img src="imagen/csilogo.png" alt="Colaborador 2" class="h-32 w-auto object-contain">
     </div>
+
+
+
 
 
 
