@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Codeliga</title>
-    <link rel="icon" href="imagen/Trofeo.png" type="image/png">
+    <link rel="icon" href="imagen/trofeo_codeliga.png" type="image/png" sizes="512x512">
 
     <style>
         *,
@@ -16,6 +16,27 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            display: flex;
+            width: calc(200%);
+            animation: scroll 20s linear infinite;
+        }
+
+        /* Opcional: pausa el carrusel al pasar el mouse */
+        .animate-scroll:hover {
+            animation-play-state: paused;
         }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,12 +50,12 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
 
             <div class="flex items-center">
-                <img src="imagen/codeliga_logo.png" alt="Logo Codeliga" class="h-20 w-auto">
+                <img src="imagen/NUEVO_CODELIGA_VBLANCO_TRA1.png" alt="Logo Codeliga" class="h-20 w-auto">
             </div>
 
             <div class="hidden md:flex gap-6">
                 <a href="#informacion" class="hover:underline">Sobre Nosotros</a>
-                <a href="#torneo-programacion" class="hover:underline">Torneos</a>
+                <a href="#competencias" class="hover:underline">Competencias</a>
                 <a href="#patrocinio" class="hover:underline">Colaboración</a>
                 <a href="#contacto" class="hover:underline">Redes Sociales</a>
             </div>
@@ -52,7 +73,7 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-[#892fcd] px-4 pb-4 w-full text-white">
             <a href="#informacion" class="block py-2 hover:underline">Sobre Nosotros</a>
-            <a href="#torneo-programacion" class="block py-2 hover:underline">Torneos</a>
+            <a href="#competencias" class="block py-2 hover:underline">Competencias</a>
             <a href="#patrocinio" class="block py-2 hover:underline">Colaboración</a>
             <a href="#contacto" class="block py-2 hover:underline">Redes Sociales</a>
         </div>
@@ -65,32 +86,88 @@
         });
     </script>
 
-    <section class="relative text-white py-20 text-center w-full">
-
-        <div class="absolute inset-0 bg-cover bg-center filter blur-sm overflow-hidden"
-            style="background-image: url('imagen/fondo.jpg');">
+    <section class="relative text-white py-16 sm:py-20 text-center w-full overflow-hidden">
+        <!-- Fondo dinámico o GIF -->
+        <div class="absolute inset-0 bg-cover bg-center filter blur-sm"
+            style="background-image: url('imagen/fondo.gif');">
         </div>
 
+        <!-- Capa oscura para mejorar legibilidad -->
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-        <div class="relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Bienvenido a Codeliga </h1>
-            <p class="max-w-2xl mx-auto text-lg text-white">El lugar donde aprendes, compites y te diviertes con
-                programación, deportes mentales, eSports, talleres de inglés y computación, desarrollo de videojuegos y
-                emocionantes deportes del futuro.</p>
-            <a href="#torneo-programacion"
-                class="mt-6 inline-flex items-center justify-center gap-2 bg-[#892fcd] text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-[#6b1db0] transition">
-                Participar
+        <!-- Contenido principal -->
+        <div class="relative z-10 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug sm:leading-tight">
+                Bienvenido a Codeliga
+            </h1>
+            <p
+                class="max-w-xl sm:max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white leading-relaxed sm:leading-relaxed">
+                Codeliga es tu espacio integral para aprender, competir y crecer. Desarrolla habilidades en
+                programación, participa en eSports, hackatones y deportes mentales. ¡El futuro de
+                la tecnología y la competición en un solo lugar!
+            </p>
+            <a href="#competencias"
+                class="mt-6 inline-flex items-center justify-center gap-2 bg-[#892fcd] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-xl shadow hover:bg-[#6b1db0] transition text-sm sm:text-base">
+                Participa Ahora
             </a>
         </div>
     </section>
 
+    <!-- Modal de invitación al Team eSports -->
+    <div id="teamModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 text-white rounded-2xl p-8 max-w-sm w-11/12 shadow-2xl text-center relative">
+
+            <button id="closeModal"
+                class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl font-bold">&times;</button>
+
+            <img src="imagen/CODESTRIKE.jpg" alt="Codeliga eSports" class="mx-auto h-32 w-32 mb-4 object-contain">
+
+            <h3 class="text-2xl font-bold text-[#4cc72b] mb-3">¡ÚNETE AL TEAM CODESTRIKE!</h3>
+            <p class="text-gray-300 mb-6 text-sm">
+                Si te apasionan los videojuegos, la competencia y el trabajo en equipo, esta es tu oportunidad de formar
+                parte del equipo oficial de eSports de <strong>Codeliga</strong>.
+                ¡Conéctate con otros jugadores y crece con nosotros!
+            </p>
+
+            <a href="https://chat.whatsapp.com/DzBKmRDocuy8RiivhNmbOW?mode=wwc" target="_blank"
+                class="inline-flex items-center justify-center bg-[#25D366] text-black font-semibold px-5 py-3 rounded-xl shadow-md hover:bg-[#1EBE5D] transition">
+                <i class="fa-brands fa-whatsapp text-2xl mr-2"></i> Unirme por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const modal = document.getElementById('teamModal');
+            const closeBtn = document.getElementById('closeModal');
+
+            // Verificar si ya se mostró el modal en esta sesión
+            if (!sessionStorage.getItem('modalShown')) {
+                modal.classList.remove('hidden'); // Mostrar modal
+                sessionStorage.setItem('modalShown', 'true'); // Marcar como mostrado
+            }
+
+            // Cerrar modal al hacer clic en la X
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            // Cerrar modal al hacer clic fuera del cuadro
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+
     <section id="informacion" class="max-w-6xl mx-auto py-16 px-4 w-full">
-        <h2 class="text-3xl font-bold mb-12 text-center text-[#4cc72b]">Sobre CodeLiga</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center text-[#4cc72b]">SOBRE CODELIGA</h2>
         <div class="grid md:grid-cols-2 gap-12">
             <div
                 class="p-6 bg-gray-800 rounded-2xl shadow-lg transform transition hover:-translate-y-2 hover:shadow-2xl flex flex-col md:flex-row items-center gap-6">
-                <img src="imagen/historia.png" alt="Historia" class="w-32 h-32 object-cover rounded-xl">
+                <img src="imagen/yo_anime.png" alt="Historia" class="w-32 h-32 object-cover rounded-xl">
                 <div>
                     <h3 class="text-2xl font-bold mb-2 text-[#892fcd]">Nuestra Historia</h3>
                     <p class="text-gray-300 leading-relaxed">
@@ -105,7 +182,7 @@
             </div>
             <div
                 class="p-6 bg-gray-800 rounded-2xl shadow-lg transform transition hover:-translate-y-2 hover:shadow-2xl flex flex-col md:flex-row items-center gap-6">
-                <img src="imagen/mision.png" alt="Misión" class="w-32 h-32 object-cover rounded-xl">
+                <img src="imagen/imagen2.png" alt="Misión" class="w-32 h-32 object-cover rounded-xl">
                 <div>
                     <h3 class="text-2xl font-bold mb-2 text-[#4cc72b]">Misión</h3>
                     <p class="text-gray-300 leading-relaxed">
@@ -120,7 +197,7 @@
             </div>
             <div
                 class="p-6 bg-gray-800 rounded-2xl shadow-lg transform transition hover:-translate-y-2 hover:shadow-2xl flex flex-col md:flex-row items-center gap-6">
-                <img src="imagen/vision.png" alt="Visión" class="w-32 h-32 object-cover rounded-xl">
+                <img src="imagen/imagen3.png" alt="Visión" class="w-32 h-32 object-cover rounded-xl">
                 <div>
                     <h3 class="text-2xl font-bold mb-2 text-[#892fcd]">Visión</h3>
                     <p class="text-gray-300 leading-relaxed">
@@ -133,7 +210,7 @@
             </div>
             <div
                 class="p-6 bg-gray-800 rounded-2xl shadow-lg transform transition hover:-translate-y-2 hover:shadow-2xl flex flex-col md:flex-row items-center gap-6">
-                <img src="imagen/objetivo.png" alt="Objetivo" class="w-32 h-32 object-cover rounded-xl">
+                <img src="imagen/imagen1.png" alt="Objetivo" class="w-32 h-32 object-cover rounded-xl">
                 <div>
                     <h3 class="text-2xl font-bold mb-2 text-[#4cc72b]">Objetivo</h3>
                     <p class="text-gray-300 leading-relaxed">
@@ -149,130 +226,111 @@
         </div>
     </section>
 
-    <!-- Torneo de Programación -->
-    <section id="torneo-programacion" class="max-w-7xl mx-auto py-16 px-4 w-full">
-        <h2 class="text-3xl font-bold mb-8 text-center text-[#892fcd]">Próximo Torneo de Programación</h2>
-        <div class="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
-            <div class="bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-[#892fcd]">
-                <img src="imagen/torneo-de-programacion.jpg" alt="Ingles"
-                    class="w-full h-48 object-cover rounded-2xl mb-4">
+    <section class="py-12 px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-[#892fcd]">
+            ¡INSCRIBE A TU TEAM Y COMPITE EN CODELIGA ESPORTS!
+        </h2>
 
-                <h3 class="text-xl font-bold mb-2 text-[#4cc72b]">Torneo de Programación Web</h3>
-                <p class="text-gray-300 mb-2">Demuestra tus habilidades en desarrollo web creando proyectos interactivos
-                    y funcionales.</p>
-                <p class="text-gray-400 text-sm">Fecha: 11 de Octubre 2025 | Modalidad: Online | Duración: 2 horas</p>
-                <a href="https://form.typeform.com/to/W7pmfIac"
-                    class="mt-4 inline-block bg-[#892fcd] text-white px-4 py-2 rounded-lg hover:bg-[#6b1db0] transition">Inscribirme</a>
+        <a href="https://www.cognitoforms.com/CodeLiga3/RegistroDeEquipoESportsCodeLiga" class="inline-flex items-center justify-center 
+              w-28 h-28 sm:w-36 sm:h-36 
+              bg-white hover:bg-gray-200 /* Fondo BLANCO y hover gris claro */
+              rounded-full shadow-2xl shadow-white/50 /* Sombra para resaltar el blanco */
+              transition duration-300 transform hover:scale-105" aria-label="Registrarse en CodeLiga Esports">
+
+            <img src="imagen/CODELIGA_ESPORTS_NEGRO..png" alt="Logo para Registrarse"
+                class="w-3/4 h-3/4 object-contain opacity-80">
+        </a>
+
+        <p class="text-gray-400 mt-6 text-xl font-semibold">
+            Haz clic en el círculo para iniciar el registro.
+        </p>
+    </section>
+
+
+    <section id="competencias" class="max-w-7xl mx-auto py-16 px-4 w-full text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-[#892fcd]">EXPLORA NUESTRAS COMPETENCIAS</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card de Torneo -->
+            <div
+                class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:-translate-y-3 hover:scale-105 hover:shadow-2xl flex flex-col">
+                <img src="imagen/Chicos_en_torneo_anime.gif" alt="Torneos"
+                    class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                <div class="p-6 flex flex-col items-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#4cc72b] mb-4">Torneos</h3>
+                    <p class="text-gray-300 mb-6 text-sm sm:text-base">Participa en los torneos más desafiantes de la
+                        Codeliga. Desde eSports y hackatones, hasta programación competitiva y deportes mentales.
+                        ¡Demuestra tu talento, supera tus límites y conquista cada reto!</p>
+                    <a href="torneo.html"
+                        class="inline-block bg-[#4cc72b] text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-[#3a9d21] transition">
+                        Entrar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card de Liga -->
+            <div
+                class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:-translate-y-3 hover:scale-105 hover:shadow-2xl flex flex-col">
+                <img src="imagen/Adobe Express - Logo_en_Trofeo_de_Video.gif" alt="Ligas"
+                    class="w-full h-48 sm:h-56 md:h-64 object-cover">
+                <div class="p-6 flex flex-col items-center">
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#4cc72b] mb-4">Ligas</h3>
+                    <p class="text-gray-300 mb-6 text-sm sm:text-base">Las ligas son el corazón de CodeLiga: espacios
+                        donde gamers, programadores y mentes creativas se enfrentan, colaboran y evolucionan juntos.</p>
+                    <a href="liga.html"
+                        class="inline-block bg-[#4cc72b] text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-[#3a9d21] transition">
+                        Entrar
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Taller de Inglés -->
-    <section id="taller-ingles" class="max-w-7xl mx-auto py-16 px-4 w-full">
-        <h2 class="text-3xl font-bold mb-8 text-center text-[#892fcd]">Próximos Talleres</h2>
-        <div class="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
-            <div class="bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-[#892fcd]">
-                <img src="imagen/ingles_A1.jpg" alt="Ingles" class="w-full h-48 object-cover rounded-2xl mb-4">
 
-                <h3 class="text-xl font-bold mb-2 text-[#4cc72b]">Inglés Básico – Nivel Principiante</h3>
-                <p class="text-gray-300 mb-2">
-                    Aprende vocabulario y expresiones básicas para comunicarte en situaciones cotidianas, reforzando
-                    comprensión, conversación y práctica escrita.
-                </p>
-                <p class="text-gray-400 text-sm">Fecha: Próximamente | Modalidad: Online | Duración: 4 clases</p>
-                <a href=""
-                    class="mt-4 inline-block bg-[#892fcd] text-white px-4 py-2 rounded-lg hover:bg-[#6b1db0] transition">Inscribirme</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Deportes Mentales -->
-    <section id="deportes-mentales" class="max-w-7xl mx-auto py-16 px-4 w-full">
-        <h2 class="text-3xl font-bold mb-8 text-center text-[#892fcd]">Próximos Deportes Mentales</h2>
-        <div class="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
-            <div class="bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-[#892fcd]">
-                <img src="imagen/Ajedrez_online.jpg" alt="Ajedrez" class="w-full h-48 object-cover rounded-2xl mb-4">
-                <h3 class="text-xl font-bold mb-2 text-[#4cc72b]">Torneo de Ajedrez Online</h3>
-                <p class="text-gray-300 mb-2">Participa en la competencia de ajedrez online y demuestra tu estrategia y
-                    pensamiento crítico.</p>
-                <p class="text-gray-400 text-sm">Fecha: Próximamente | Modalidad: Online | Duración: </p>
-                <a href=""
-                    class="mt-4 inline-block bg-[#892fcd] text-white px-4 py-2 rounded-lg hover:bg-[#6b1db0] transition">Inscribirme</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- eSports -->
-    <section id="esports" class="max-w-7xl mx-auto py-16 px-4 w-full">
-        <h2 class="text-3xl font-bold mb-8 text-center text-[#892fcd]">Próximos eSports</h2>
-        <div class="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
-            <div class="bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-[#892fcd]">
-                <img src="imagen/clash_royale.jpg" alt="clash royale" class="w-full h-48 object-cover rounded-2xl mb-4">
-
-                <h3 class="text-xl font-bold mb-2 text-[#4cc72b]">Torneo de Clash Royale</h3>
-                <p class="text-gray-300 mb-2">
-                    Compite en el popular juego de estrategia Clash Royale y demuestra tus habilidades, estrategia y
-                    rapidez.
-                </p>
-                <p class="text-gray-400 text-sm">Fecha: 11/10/2025 | Modalidad: Online | Duración: 3 horas </p>
-                <a href="https://www.cognitoforms.com/CodeLiga3/Inscripci%C3%B3nTorneoCodeligaClashRoyale"
-                    class="mt-4 inline-block bg-[#892fcd] text-white px-4 py-2 rounded-lg hover:bg-[#6b1db0] transition">Inscribirme</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Deportes del Futuro -->
-
-    <section id="deportes-futuro" class="max-w-7xl mx-auto py-16 px-4 w-full">
-        <h2 class="text-3xl font-bold mb-8 text-center text-[#892fcd]">Próximos Deportes del Futuro</h2>
-        <div class="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
-            <div class="bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-[#892fcd]">
-                <img src="imagen/carrera_drones.png" alt="Drone Racing"
-                    class="w-full h-48 object-cover rounded-2xl mb-4">
-
-                <h3 class="text-xl font-bold mb-2 text-[#4cc72b]">Drone Racing</h3>
-                <p class="text-gray-300 mb-2">
-                    Compite en emocionantes carreras de drones y demuestra tus habilidades de control, velocidad y
-                    precisión.
-                </p>
-                <p class="text-gray-400 text-sm">Fecha: Próximamente | Modalidad: Presencial | Duración: </p>
-                <a href=""
-                    class="mt-4 inline-block bg-[#892fcd] text-white px-4 py-2 rounded-lg hover:bg-[#6b1db0] transition">Inscribirme</a>
-            </div>
-
-        </div>
-    </section>
 
 
 
     <section id="patrocinio" class="bg-gray-800 py-16 px-4 w-full">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 text-[#892fcd]">Conviértete en Colaborador</h2>
+            <h2 class="text-3xl font-bold mb-4 text-[#892fcd]">CONVIÉRTETE EN COLABORADOR</h2>
             <p class="text-gray-300 mb-6">Tu apoyo nos permite seguir formando a la próxima generación de programadores
                 y deportistas mentales. Obtén visibilidad, reconocimiento y contribuye al desarrollo del talento
                 tecnológico y estratégico en tu ciudad.</p>
-            <a href="Plan de Colaboración - Codeliga Amateur 2025.pdf" target="_blank"
+            <a href="Plan de Colaboración - Codeliga 2025.pdf" target="_blank"
                 class="bg-[#4cc72b] text-white px-6 py-3 rounded-lg hover:bg-[#3a9d21] transition">
-                Ver Opciones de Colaboración
+                Entrar para más Información
             </a>
         </div>
 
 
 
 
+
+
     </section>
     <h2 class="text-3xl font-bold mb-12 text-center text-[#4cc72b]">
-        Colaboradores de la CodeLiga
+        COLABORADORES DE LA CODELIGA
     </h2>
 
-    <div class="max-w-6xl mx-auto mt-12 flex justify-center">
-        <img src="imagen/logo_machadoisla_tra.png" alt="Colaborador 1" class="h-32 w-auto object-contain">
+    <div class="relative overflow-hidden">
+        <div class="flex items-center justify-center space-x-16 animate-scroll">
+            <!-- Colaborador 1 -->
+            <div class="flex-shrink-0 bg-white rounded-full p-6 shadow-lg">
+                <img src="imagen/logo_machadoisla_tra.png" alt="Colaborador 1" class="h-24 w-24 object-contain" />
+            </div>
+
+            <!-- Colaborador 2 (ejemplo) -->
+            <div class="flex-shrink-0 bg-white rounded-full p-6 shadow-lg">
+                <img src="imagen/logo-algo.png" alt="Colaborador 2" class="h-24 w-24 object-contain" />
+            </div>
+
+            <!-- Colaborador 3 (ejemplo) -->
+            <div class="flex-shrink-0 bg-white rounded-full p-6 shadow-lg">
+                <img src="imagen/IOGO_CLIVEXA_TRA (2).png" alt="Colaborador 3" class="h-24 w-24 object-contain" />
+            </div>
+        </div>
     </div>
-
-
-
-
-
 
     <footer id="contacto" class="bg-[#3cb81c] py-8 px-4 mt-16 w-full">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
