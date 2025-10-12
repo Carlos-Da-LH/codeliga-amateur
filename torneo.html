@@ -40,18 +40,20 @@
     <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-green-400 mb-6 text-center">PRÓXIMOS TORNEOS</h3>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Torneo 1 -->
       <div class="bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-lg hover:-translate-y-1 transition transform">
-        <img src="imagen/clash-royale.gif" alt="Hackatón" class="rounded-lg mb-4 w-full h-40 sm:h-48 object-cover">
+        <img src="imagen/clash-royale.gif" alt="Clash Royale" class="rounded-lg mb-4 w-full h-40 sm:h-48 object-cover">
         <h4 class="text-base sm:text-lg font-semibold text-purple-400">Torneo de Clash Royale - Cd del Carmen</h4>
         <p class="text-gray-300 text-sm sm:text-base mt-2">
-          Compiten en el popular juego de estrategia Clash Royale y demuestra tus habilidades, estrategia y rapidez.
+          Compite en el popular juego de estrategia Clash Royale y demuestra tus habilidades, estrategia y rapidez.
         </p>
         <div class="mt-4 flex items-center justify-center sm:justify-start space-x-3">
           <a href="https://www.cognitoforms.com/CodeLiga3/InscripciónTorneoCodeligaClashRoyale"
             class="bg-green-500 hover:bg-green-600 text-black px-4 py-2 rounded-lg font-semibold text-center flex-grow sm:flex-grow-0">
             Regístrate
           </a>
-          <button id="infoBtn" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full flex-shrink-0">
+          <button id="infoBtn1" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full flex-shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -60,10 +62,33 @@
           </button>
         </div>
       </div>
+
+      <!-- Torneo 2 -->
+      <div class="bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-lg hover:-translate-y-1 transition transform">
+        <img src="imagen/clash_royale.jpg" alt="Clash Royale" class="rounded-lg mb-4 w-full h-40 sm:h-48 object-cover">
+        <h4 class="text-base sm:text-lg font-semibold text-purple-400">Torneo de Clash Royale - LATAM</h4>
+        <p class="text-gray-300 text-sm sm:text-base mt-2">
+          Compite en el popular juego de estrategia Clash Royale y demuestra tus habilidades, estrategia y rapidez.
+        </p>
+        <div class="mt-4 flex items-center justify-center sm:justify-start space-x-3">
+          <a href="https://www.cognitoforms.com/CodeLiga3/InscripciónGratuitaTorneoClashRoyaleLATAMCodeLiga"
+            class="bg-green-500 hover:bg-green-600 text-black px-4 py-2 rounded-lg font-semibold text-center flex-grow sm:flex-grow-0">
+            Regístrate
+          </a>
+          <button id="infoBtn2" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Modal -->
-    <div id="infoModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4">
+    <!-- Modal Torneo 1 -->
+    <div id="infoModal1" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4">
       <div class="bg-gray-900 p-6 sm:p-8 rounded-2xl max-w-sm sm:max-w-md w-full text-center shadow-xl">
         <h3 class="text-xl font-bold text-purple-400 mb-3">Información del Torneo</h3>
         <p class="text-gray-300 text-sm sm:text-base mb-5">
@@ -74,24 +99,63 @@
           Descuento<br><br>
           ¡Participa y demuestra tus habilidades en el emocionante torneo de Clash Royale!
         </p>
-        <button id="closeModal"
+        <button id="closeModal1"
           class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-semibold w-full sm:w-auto">
           Cerrar
         </button>
       </div>
     </div>
 
+    <!-- Modal Torneo 2 -->
+    <div id="infoModal2" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4">
+      <div class="bg-gray-900 p-6 sm:p-8 rounded-2xl max-w-sm sm:max-w-md w-full text-center shadow-xl">
+        <h3 class="text-xl font-bold text-purple-400 mb-3">Información del Torneo</h3>
+        <p class="text-gray-300 text-sm sm:text-base mb-5">
+          📅 <strong>Fecha:</strong> 18 de octubre de 2025<br>
+          🕒 <strong>Hora:</strong> 6:00 p.m.<br>
+          🌐 <strong>Modalidad:</strong> Online<br><br>
+          🥇 <strong>1° Lugar:</strong> Reconocimiento digital + Reconocimiento en redes + Pase directo a futuros
+          torneos o ligas exclusivas<br><br>
+          ¡Participa y demuestra tus habilidades en el emocionante torneo de Clash Royale!
+        </p>
+        <button id="closeModal2"
+          class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-semibold w-full sm:w-auto">
+          Cerrar
+        </button>
+      </div>
+    </div>
   </section>
 
-  <script>
-    const infoBtn = document.getElementById('infoBtn');
-    const infoModal = document.getElementById('infoModal');
-    const closeModal = document.getElementById('closeModal');
 
-    infoBtn.addEventListener('click', () => infoModal.classList.remove('hidden'));
-    closeModal.addEventListener('click', () => infoModal.classList.add('hidden'));
-    infoModal.addEventListener('click', (e) => { if (e.target === infoModal) infoModal.classList.add('hidden'); });
+  <script>
+    // Seleccionamos todos los botones de información
+    const infoBtns = document.querySelectorAll('[id^="infoBtn"]');
+
+    infoBtns.forEach(btn => {
+      const modalId = 'infoModal' + btn.id.replace('infoBtn', '');
+      const closeId = 'closeModal' + btn.id.replace('infoBtn', '');
+      const modal = document.getElementById(modalId);
+      const closeModal = document.getElementById(closeId);
+
+      // Abrir modal al hacer clic en el botón
+      btn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+      });
+
+      // Cerrar modal al hacer clic en la "X" o botón de cerrar
+      closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+
+      // Cerrar modal si se hace clic fuera del contenido
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+        }
+      });
+    });
   </script>
+
 
   <!-- Footer -->
   <footer class="py-4" style="background-color: #3cb81c;">
