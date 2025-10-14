@@ -10,15 +10,19 @@
 </head>
 
 <body class="bg-gray-900 text-gray-200 pb-20">
-
     <header style="background-color: #892fcd;" class="text-white py-4 flex items-center justify-center relative">
-        <button onclick="history.back()" class="absolute left-4 sm:left-6 text-white hover:text-gray-200">
+        <button onclick="
+    if (document.referrer && document.referrer.includes(window.location.hostname)) {
+        history.back();
+    } else {
+        window.location.href='index.html';
+    }
+" class="absolute left-4 sm:left-6 text-white hover:text-gray-200">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
         </button>
-
         <img src="imagen/NUEVO_CODELIGA_VBLANCO_TRA1.png" alt="Logo de CodeLiga" class="mx-auto h-12 sm:h-16">
     </header>
 
