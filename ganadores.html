@@ -26,6 +26,22 @@
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-[#4cc72b]">
             🏆 HISTORIAL COMPLETO DE GANADORES
         </h2>
+        <!-- FILTRO + SELECTOR -->
+        <div class="flex flex-col sm:flex-row justify-between mb-6 gap-4">
+
+            <!-- BUSCADOR -->
+            <input id="searchInput" type="text" placeholder="Buscar campeón, país o torneo..."
+                class="w-full sm:w-1/2 px-4 py-2 rounded-lg bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:ring focus:ring-purple-500">
+
+            <!-- SELECT -->
+            <select id="limitSelect"
+                class="px-4 py-2 rounded-lg bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:ring focus:ring-purple-500">
+                <option value="20">Mostrar 20</option>
+                <option value="50">Mostrar 50</option>
+                <option value="100">Mostrar 100</option>
+                <option value="200">Mostrar 200</option>
+            </select>
+        </div>
 
         <div class="overflow-x-auto bg-gray-800 rounded-2xl shadow-lg p-4 sm:p-6">
             <table class="min-w-full text-gray-200 text-xs sm:text-sm md:text-base">
@@ -40,7 +56,7 @@
                     </tr>
                 </thead>
 
-                <tbody class="divide-y divide-gray-700">
+                <tbody id="tableBody" class="divide-y divide-gray-700">
                     <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
@@ -66,20 +82,20 @@
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Torneo de Práctica T1 - Codeliga eSports</td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">RAMOS</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
-                            <img src="imagen/peru.png" alt="Peru"
-                                class="w-10 h-auto mx-auto inline-block rounded">
+                            <img src="imagen/peru.png" alt="Peru" class="w-10 h-auto mx-auto inline-block rounded">
                             <span class="ml-1"></span>
                         </td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
 
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
                         <td class="py-2 px-2 sm:px-4">15/10/2025</td>
-                        <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Torneo de Práctica T1 | 2 vs 2 - Codeliga eSports</td>
+                        <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Torneo de Práctica T1 | 2 vs 2 - Codeliga
+                            eSports</td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">Ẓ̌ËŘØƘ y Kedisa</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/bandera_mexico.png" alt="México"
@@ -89,12 +105,12 @@
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
 
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
-                     <td class="py-2 px-2 sm:px-4">17/10/2025</td>
+                        <td class="py-2 px-2 sm:px-4">17/10/2025</td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Torneo de Práctica T1 - Codeliga eSports</td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">TETSUKI</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
@@ -105,13 +121,14 @@
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
 
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
-                     <td class="py-2 px-2 sm:px-4">18/10/2025</td>
-                        <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Clash Royale LATAM - Codeliga eSports</td>
+                        <td class="py-2 px-2 sm:px-4">18/10/2025</td>
+                        <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Clash Royale LATAM - Codeliga eSports
+                        </td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">TETSUKI</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/colombia.png" alt="México"
@@ -121,12 +138,12 @@
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
 
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
-                     <td class="py-2 px-2 sm:px-4">20/10/2025</td>
+                        <td class="py-2 px-2 sm:px-4">20/10/2025</td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Codeliga eSports - Clash Royale </td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">TETSUKI</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
@@ -137,12 +154,12 @@
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
 
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
-                     <td class="py-2 px-2 sm:px-4">29/10/2025</td>
+                        <td class="py-2 px-2 sm:px-4">29/10/2025</td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Codeliga eSports - Clash Royale </td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">DANIEL</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
@@ -153,12 +170,12 @@
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
 
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
-                     <td class="py-2 px-2 sm:px-4">30/10/2025</td>
+                        <td class="py-2 px-2 sm:px-4">30/10/2025</td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Codeliga eSports - Clash Royale </td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">ARES</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
@@ -169,31 +186,44 @@
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
 
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
-                     <td class="py-2 px-2 sm:px-4">03/11/2025</td>
+                        <td class="py-2 px-2 sm:px-4">03/11/2025</td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Codeliga eSports - Clash Royale </td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">RAMOS</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
-                            <img src="imagen/peru.png" alt="México"
-                                class="w-10 h-auto mx-auto inline-block rounded">
+                            <img src="imagen/peru.png" alt="México" class="w-10 h-auto mx-auto inline-block rounded">
                             <span class="ml-1"></span>
                         </td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
                     </tr>
-                     <tr class="hover:bg-gray-700 transition">
+                    <tr class="hover:bg-gray-700 transition">
                         <td class="py-2 px-2 sm:px-4 text-center">
                             <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
                                 class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
                         </td>
-                     <td class="py-2 px-2 sm:px-4">04/11/2025</td>
+                        <td class="py-2 px-2 sm:px-4">04/11/2025</td>
                         <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Codeliga eSports - Clash Royale </td>
                         <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">RAMOS</td>
                         <td class="py-2 px-2 sm:px-4 text-center">
-                            <img src="imagen/peru.png" alt="México"
+                            <img src="imagen/peru.png" alt="México" class="w-10 h-auto mx-auto inline-block rounded">
+                            <span class="ml-1"></span>
+                        </td>
+                        <td class="py-2 px-2 sm:px-4 whitespace-nowrap">Clash Royale</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700 transition">
+                        <td class="py-2 px-2 sm:px-4 text-center">
+                            <img src="imagen/Primer_lugar.png" alt="Medalla Oro"
+                                class="w-12 sm:w-16 md:w-24 h-auto mx-auto block">
+                        </td>
+                        <td class="py-2 px-2 sm:px-4">07/11/2025</td>
+                        <td class="py-2 px-2 sm:px-4 whitespace-nowrap"> Torneo Codeliga eSports - Clash Royale </td>
+                        <td class="py-2 px-2 sm:px-4 font-semibold text-[#4cc72b]">Ẓ̌ËŘØƘ</td>
+                        <td class="py-2 px-2 sm:px-4 text-center">
+                            <img src="imagen/bandera_mexico.png" alt="México"
                                 class="w-10 h-auto mx-auto inline-block rounded">
                             <span class="ml-1"></span>
                         </td>
@@ -251,5 +281,30 @@
     </footer>
 
 </body>
+<!-- ✅ SCRIPT: FILTRO + LÍMITE -->
+<script>
+    const searchInput = document.getElementById("searchInput");
+    const limitSelect = document.getElementById("limitSelect");
+    const tableBody = document.getElementById("tableBody");
+    const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+    function applyFilters() {
+        const query = searchInput.value.toLowerCase();
+        const limit = parseInt(limitSelect.value);
+
+        const filteredRows = rows.filter(row =>
+            row.innerText.toLowerCase().includes(query)
+        );
+
+        tableBody.innerHTML = "";
+        filteredRows.slice(0, limit).forEach(row =>
+            tableBody.appendChild(row)
+        );
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+    limitSelect.addEventListener("change", applyFilters);
+    applyFilters();
+</script>
 
 </html>
